@@ -1,0 +1,24 @@
+{
+  "prefs": {
+    "AIRequestLimitInfo": "{\"limit\":6,\"num_requests_used_since_refresh\":2,\"next_refresh_time\":\"2025-02-12T12:35:54.217892Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Weekly\",\"accepted_autosuggestions_limit\":50,\"is_unlimited_autosuggestions\":false,\"accepted_autosuggestions_since_last_refresh\":9}",
+    "AvailableLLMs": "{\"default_id\":\"claude-3-5-sonnet\",\"choices\":[{\"display_name\":\"claude 3.5 sonnet\",\"id\":\"claude-3-5-sonnet\"},{\"display_name\":\"claude 3.5 haiku\",\"id\":\"claude-3-5-haiku\"},{\"display_name\":\"gpt-4o\",\"id\":\"gpt-4o\"},{\"display_name\":\"o3-mini\",\"id\":\"o3-mini\"},{\"display_name\":\"gemini 2.0 flash\",\"id\":\"gemini-2.0-flash\"},{\"display_name\":\"deepseek-r1 (US hosted)\",\"id\":\"deepseek-r1\"},{\"display_name\":\"deepseek-v3 (US hosted)\",\"id\":\"deepseek-v3\"}]}",
+    "WelcomeTipsFeaturesUsed": "[{\"Hint\":\"CreateBlock\"},{\"Hint\":\"BlockSelect\"},{\"Hint\":\"BlockAction\"},{\"Action\":\"ThemePicker\"}]",
+    "NotebookFontSize": "14.0",
+    "Theme": "\"Snowy\"",
+    "AIAssistantRequestLimitInfo": "{\"limit\":6,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2025-02-12T12:35:54.217892Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Weekly\",\"accepted_autosuggestions_limit\":50,\"is_unlimited_autosuggestions\":false,\"accepted_autosuggestions_since_last_refresh\":0}",
+    "AgentModeSuggestionsRemainingWarnings": "0",
+    "ReceivedReferralTheme": "\"Inactive\"",
+    "RenotificationBlockLastDisplayTime": "2025-02-05T15:36:07.189638852+00:00",
+    "TelemetryEnabled": "true",
+    "ShouldAddAgentModeChip": "false",
+    "HasAutoOpenedWelcomeFolder": "true",
+    "DidShowActiveAIPermissionsDialog": "true",
+    "ExperimentId": "db88ac99-e531-4f62-a32f-ab0efba161ab",
+    "ShowWarningBeforeQuitting": "false",
+    "AutosuggestionAcceptedCount": "2",
+    "ChangelogVersions": "{\"v0.2025.01.29.08.02.stable_03\":true}",
+    "FontSize": "16.0",
+    "NextCommandSuggestionsUpgradeBannerNumTimesShownThisPeriod": "0",
+    "CrashReportingEnabled": "true"
+  }
+}
