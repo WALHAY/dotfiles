@@ -191,11 +191,7 @@ return { -- LSP Configuration & Plugins
 					-- This handles overriding only values explicitly passed
 					-- by the server configuration above. Useful when disabling
 					-- certain features of an LSP (for example, turning off formatting for tsserver)
-					server.capabilities = vim.tbl_deep_extend("force", {
-						on_attach = function(client, bufnr)
-							require("nvim-navic").attach(client, bufnr)
-						end,
-					}, capabilities, server.capabilities or {})
+					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
 				end,
 				jdtls = function()
