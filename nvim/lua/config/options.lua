@@ -6,5 +6,6 @@ return {
 		vim.opt.tabstop = 4
 
 		vim.wo.relativenumber = true
+		vim.wo.number = true
 	end,
 }
