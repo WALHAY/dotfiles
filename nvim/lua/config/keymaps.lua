@@ -27,10 +27,10 @@ local function custom_which_key()
 			g = { "<cmd>Neogit<cr>", "Open NeoGit" },
 		},
 		-- Neovim-Project
-		k = {
-			name = "Projects",
-			s = { "<cmd>Telescope projects<cr>", "Load Recent Project" },
-		},
+		-- k = {
+		-- 	name = "Projects",
+		-- 	s = { "<cmd>Telescope projects<cr>", "Load Recent Project" },
+		-- },
 		-- Explorer
 		e = { "<cmd>Neotree toggle<cr>", "Explorer" },
 		-- Hop
@@ -41,7 +41,7 @@ local function custom_which_key()
 			l = { "<cmd>HopLine<cr>", "Hop Line" },
 		},
 		-- Neoclip
-		C = { "<cmd>Telescope neoclip<cr>", "Clipboard" },
+		-- C = { "<cmd>Telescope neoclip<cr>", "Clipboard" },
 		--  Nvim-window
 		w = { "<cmd>lua require('nvim-window').pick()<cr>", "Window Selector" },
 	}

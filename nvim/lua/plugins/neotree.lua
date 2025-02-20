@@ -11,7 +11,7 @@ return {
 	opts = {
 		close_if_last_window = false,
 		window = {
-			width = 40,
+			width = 32,
 			mappings = {
 				["a"] = {
 					"add",
@@ -61,6 +61,7 @@ return {
 				},
 				always_show = {
 					".gitignore",
+					".clang-format",
 				},
 			},
 			group_empty_dirs = true,
