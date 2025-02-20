@@ -26,28 +26,5 @@ return {
 		cwd_change_handling = true, -- Follow cwd changes, saving a session before change and restoring after
 		lsp_stop_on_restore = true, -- Should language servers be stopped when restoring a session. Can also be a function that will be called if set. Not called on autorestore from startup
 		log_level = "error", -- Sets the log level of the plugin (debug, info, warn, error).
-
-		session_lens = {
-			load_on_setup = true, -- Initialize on startup (requires Telescope)
-			theme_conf = { -- Pass through for Telescope theme options
-				-- layout_config = { -- As one example, can change width/height of picker
-				--   width = 0.8,    -- percent of window
-				--   height = 0.5,
-				-- },
-			},
-			previewer = false, -- File preview for session picker
-
-			mappings = {
-				-- Mode can be a string or a table, e.g. {"i", "n"} for both insert and normal mode
-				delete_session = { "i", "<C-D>" },
-				alternate_session = { "i", "<C-S>" },
-				copy_session = { "i", "<C-Y>" },
-			},
-
-			session_control = {
-				control_dir = vim.fn.stdpath("data") .. "/auto_session/", -- Auto session control dir, for control files, like alternating between two sessions with session-lens
-				control_filename = "session_control.json", -- File name of the session control file
-			},
-		},
 	},
 }

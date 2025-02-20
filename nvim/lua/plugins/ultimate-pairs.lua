@@ -113,14 +113,14 @@ return {
 			--then a `)` will not be inserted
 		},
 		tabout = { -- *ultimate-autopair-map-tabout-config*
-			enable = false,
+			enable = true,
 			map = "<A-tab>", --string or table
 			cmap = "<A-tab>", --string or table
 			conf = {},
 			--contains extension config
 			multi = false,
 			--use multiple configs (|ultimate-autopair-map-multi-config|)
-			hopout = false,
+			hopout = true,
 			-- (|) > tabout > ()|
 			do_nothing_if_fail = true,
 			--add a module so that if close fails
