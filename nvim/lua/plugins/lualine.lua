@@ -3,6 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	lazy = false,
 	opts = {
+		globalstatus = true,
 		options = {
 			icons_enabled = true,
 			disabled_filetypes = {
@@ -16,11 +17,24 @@ return {
 					"Outline",
 				},
 			},
-			always_show_winbar = true,
 		},
 		winbar = {
 			lualine_a = { { "filename", path = 1 } },
 			lualine_b = { "navic" },
+		},
+		inactive_winbar = {
+			lualine_a = { { "filename", path = 1 } },
+			lualine_b = { "navic" },
+		},
+		inactive_sections = {
+			lualine_a = {
+				"mode",
+			},
+			lualine_b = {
+				"branch",
+				"diff",
+				"diagnostics",
+			},
 		},
 	},
 }

@@ -21,7 +21,6 @@ local function custom_which_key()
 
 	local mappings = {
 		-- ToggleTerm
-		x = { "<cmd>ToggleTerm direction=horizontal size=15<cr>", "Toggle Terminal" },
 		-- NeoGit
 		g = {
 			g = { "<cmd>Neogit<cr>", "Open NeoGit" },
@@ -42,8 +41,6 @@ local function custom_which_key()
 		},
 		-- Neoclip
 		-- C = { "<cmd>Telescope neoclip<cr>", "Clipboard" },
-		--  Nvim-window
-		w = { "<cmd>lua require('nvim-window').pick()<cr>", "Window Selector" },
 	}
 
 	local vmappings = {}
@@ -64,6 +61,16 @@ return {
 		map("", "f", "<cmd>HopChar1AC<cr>")
 		map("", "F", "<cmd>HopChar1BC<cr>")
 
+		map("i", "<c-h>", "<esc><c-w>h", { desc = "window move left" })
+		map("i", "<c-j>", "<esc><c-w>j", { desc = "window move down" })
+		map("i", "<c-k>", "<esc><c-w>k", { desc = "window move up" })
+		map("i", "<c-l>", "<esc><c-w>l", { desc = "window move right" })
+
+		map("n", "<c-h>", "<c-w>h", { desc = "window move left" })
+		map("n", "<c-j>", "<c-w>j", { desc = "window move down" })
+		map("n", "<c-k>", "<c-w>k", { desc = "window move up" })
+		map("n", "<c-l>", "<c-w>l", { desc = "window move right" })
+
 		-- Move Lines
 		map("n", "<D-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 		map("n", "<D-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
@@ -73,12 +80,9 @@ return {
 		map("v", "<D-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
 		-- buffers
-		-- map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-		-- map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 		map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev Buffer" })
 		map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
-		map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-		map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+		map("n", "<leader>bd", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 		-- Clear search with <esc>
 		map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
@@ -87,9 +91,6 @@ return {
 		map("i", ",", ",<c-g>u")
 		map("i", ".", ".<c-g>u")
 		map("i", ";", ";<c-g>u")
-
-		-- save file
-		map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 		-- Terminal Mappings
 		map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
