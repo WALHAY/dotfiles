@@ -7,5 +7,7 @@ return {
 
 		vim.wo.relativenumber = true
 		vim.wo.number = true
+
+		vim.opt.autoread = true
 	end,
 }
