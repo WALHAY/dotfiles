@@ -36,7 +36,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "ab4cfee554e501f497bce0856788d43cf2eb93d7" },
   "outline.nvim": { "branch": "main", "commit": "ae473fb51b7b6086de0876328c81a63f9c3ecfef" },
   "oxocarbon.nvim": { "branch": "main", "commit": "004777819ba294423b638a35a75c9f0c7be758ed" },
-  "peek.nvim": { "branch": "master", "commit": "5820d937d5414baea5f586dc2a3d912a74636e5b" },
+  "peek.nvim": { "branch": "master", "commit": "7ad0fbf08c9209f1a4437ba7e7f9c976e771cd0e" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
