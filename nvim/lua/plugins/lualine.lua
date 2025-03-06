@@ -3,7 +3,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	lazy = false,
 	opts = {
-		theme = "fluoromachine",
+		theme = "horizons",
 		globalstatus = true,
 		options = {
 			icons_enabled = true,

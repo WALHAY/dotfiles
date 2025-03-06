@@ -21,7 +21,7 @@ return {
 				glow = true,
 				transparent = false,
 				styles = {
-					comments = {},
+					comments = { italic = true },
 					functions = {},
 					variables = {},
 					numbers = {},
@@ -30,7 +30,9 @@ return {
 					keywords = {},
 					types = {},
 				},
-				colors = {},
+				colors = {
+					yellow = "#abcdef",
+				},
 				overrides = {},
 				plugins = {
 					bufferline = true,
