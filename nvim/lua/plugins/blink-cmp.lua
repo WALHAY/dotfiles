@@ -19,15 +19,8 @@ return {
 		-- See the full "keymap" documentation for information on defining your own keymap.
 		keymap = {
 			preset = "enter",
-			["<Tab>"] = { "select_next", "fallback" },
-			["<S-Tab>"] = { "select_prev", "fallback" },
-		},
-		cmdline = {
-			keymap = {
-				preset = "default", -- "enter",
-				["<Tab>"] = { "select_next", "fallback" },
-				["<S-Tab>"] = { "select_prev", "fallback" },
-			},
+			["<C-j>"] = { "select_next", "fallback" },
+			["<C-k>"] = { "select_prev", "fallback" },
 		},
 
 		appearance = {
@@ -44,6 +37,10 @@ return {
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+		},
+
+		signature = {
+			enabled = true,
 		},
 	},
 	opts_extend = { "sources.default" },
