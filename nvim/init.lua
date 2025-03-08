@@ -1,3 +1,5 @@
+# init before to be available for plugins
+require("config.colors").config()
 require("config.lazy")
 
 vim.opt.shiftwidth = 4

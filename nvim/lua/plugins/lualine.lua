@@ -3,28 +3,31 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	lazy = false,
 	opts = {
-		theme = "horizons",
-		globalstatus = true,
 		options = {
+			globalstatus = true,
+			theme = "horizon",
 			icons_enabled = true,
 			disabled_filetypes = {
 				winbar = {
-					"neo-tree",
 					"snacks_dashboard",
 					"Outline",
-				},
-				statusline = {
 					"neo-tree",
-					"Outline",
 				},
+			},
+			ignore_focus = {
+				"neo-tree",
 			},
 		},
 		winbar = {
-			lualine_a = { { "filename", path = 1 } },
+			lualine_a = {
+				{ "filename", path = 1 },
+			},
 			lualine_b = { "navic" },
 		},
 		inactive_winbar = {
-			lualine_a = { { "filename", path = 1 } },
+			lualine_a = {
+				{ "filename", path = 1 },
+			},
 			lualine_b = { "navic" },
 		},
 		inactive_sections = {
@@ -37,5 +40,6 @@ return {
 				"diagnostics",
 			},
 		},
+		extensions = { "neo-tree" },
 	},
 }

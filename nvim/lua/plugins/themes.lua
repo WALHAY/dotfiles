@@ -45,12 +45,7 @@ return {
 				styles = custom_first,
 				colors = function(_, color)
 					local darken = color.darken
-					return {
-						orange = "#436ee1",
-						yellow = "#acadfe",
-						purple = "#fa189b",
-						red = "#fa43a1",
-					}
+					return vim.g.colors
 				end,
 				overrides = {},
 				plugins = {

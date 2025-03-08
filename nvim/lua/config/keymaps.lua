@@ -20,27 +20,9 @@ local function custom_which_key()
 	}
 
 	local mappings = {
-		-- ToggleTerm
-		-- NeoGit
-		g = {
-			g = { "<cmd>Neogit<cr>", "Open NeoGit" },
-		},
-		-- Neovim-Project
-		-- k = {
-		-- 	name = "Projects",
-		-- 	s = { "<cmd>Telescope projects<cr>", "Load Recent Project" },
-		-- },
 		-- Explorer
 		e = { "<cmd>Neotree toggle<cr>", "Explorer" },
 		-- Hop
-		h = {
-			name = "Hop",
-			w = { "<cmd>HopWord<cr>", "Hop Word" },
-			f = { "<cmd>HopPattern<cr>", "Hop Pattern" },
-			l = { "<cmd>HopLine<cr>", "Hop Line" },
-		},
-		-- Neoclip
-		-- C = { "<cmd>Telescope neoclip<cr>", "Clipboard" },
 	}
 
 	local vmappings = {}
