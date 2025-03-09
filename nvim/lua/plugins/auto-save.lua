@@ -30,6 +30,7 @@ return {
 			callback = function(opts)
 				if opts.data.saved_buffer ~= nil then
 					local filename = vim.api.nvim_buf_get_name(opts.data.saved_buffer)
+					require("conform").format({ bufnr = opts.data.saved_buffer })
 					if filename ~= nil then
 						vim.notify("AutoSave File Saved: " .. vim.fn.fnamemodify(filename, ":t"), vim.log.levels.INFO)
 					end

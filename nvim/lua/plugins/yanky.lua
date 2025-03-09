@@ -1,5 +1,8 @@
 return {
 	"gbprod/yanky.nvim",
+	lazy = true,
+	event = "TextYankPost",
+	cmd = { "YankyClearHistory", "YankyRingHistory" },
 	opts = {
 		ring = {
 			history_length = 100,

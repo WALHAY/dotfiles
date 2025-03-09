@@ -1,5 +1,7 @@
 return {
 	"saimo/peek.nvim",
+	lazy = true,
+	cmd = { "PeekOpen", "PeekClose" },
 	event = { "VeryLazy" },
 	build = "deno task --quiet build:fast",
 	ft = "markdown",

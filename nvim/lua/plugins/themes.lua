@@ -42,7 +42,7 @@ return {
 				brightness = 0.05,
 				glow = true,
 				transparent = false,
-				styles = custom_first,
+				styles = {},
 				colors = function(_, color)
 					local darken = color.darken
 					return vim.g.colors

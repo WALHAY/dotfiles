@@ -1,34 +1,9 @@
 local function custom_which_key()
 	local which_key = require("which-key")
 
-	local opts = {
-		mode = "n", -- NORMAL mode
-		prefix = "<leader>",
-		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-		silent = true, -- use `silent` when creating keymaps
-		noremap = true, -- use `noremap` when creating keymaps
-		nowait = true, -- use `nowait` when creating keymaps
-	}
-
-	local vopts = {
-		mode = "v", -- VISUAL mode
-		prefix = "<leader>",
-		buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-		silent = true, -- use `silent` when creating keymaps
-		noremap = true, -- use `noremap` when creating keymaps
-		nowait = true, -- use `nowait` when creating keymaps
-	}
-
-	local mappings = {
-		-- Explorer
-		e = { "<cmd>Neotree toggle<cr>", "Explorer" },
-		-- Hop
-	}
-
-	local vmappings = {}
-
-	which_key.register(mappings, opts)
-	which_key.register(vmappings, vopts)
+	which_key.add({
+		{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer" },
+	})
 end
 
 return {
@@ -38,20 +13,6 @@ return {
 		-- ## LAZY VIM MAPPINGS ## --
 
 		local map = vim.keymap.set
-
-		-- Hop
-		map("", "f", "<cmd>HopChar1AC<cr>")
-		map("", "F", "<cmd>HopChar1BC<cr>")
-
-		map("i", "<c-h>", "<esc><c-w>h", { desc = "window move left" })
-		map("i", "<c-j>", "<esc><c-w>j", { desc = "window move down" })
-		map("i", "<c-k>", "<esc><c-w>k", { desc = "window move up" })
-		map("i", "<c-l>", "<esc><c-w>l", { desc = "window move right" })
-
-		map("n", "<c-h>", "<c-w>h", { desc = "window move left" })
-		map("n", "<c-j>", "<c-w>j", { desc = "window move down" })
-		map("n", "<c-k>", "<c-w>k", { desc = "window move up" })
-		map("n", "<c-l>", "<c-w>l", { desc = "window move right" })
 
 		-- Move Lines
 		map("n", "<D-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
