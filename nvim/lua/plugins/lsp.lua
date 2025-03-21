@@ -5,11 +5,24 @@ return { -- LSP Configuration & Plugins
 		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"nvim-java/nvim-java",
+		{"nvim-java/nvim-java",
+		lombok = {
+			enable = true
+		}
+	},
 
 		-- Useful status updates for LSP.
 		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-		{ "j-hui/fidget.nvim", opts = {} },
+		{
+			"j-hui/fidget.nvim",
+			enabled = true,
+			opts = {
+				progress = {
+					suppress_on_insert = true,
+					ignore_done_already = true,
+				},
+			},
+		},
 
 		-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
 		-- used for completion, annotations and signatures of Neovim apis
@@ -116,13 +129,6 @@ return { -- LSP Configuration & Plugins
 
 					server.capabilities = vim.tbl_deep_extend("force", capabilities, server.capabilities or {})
 					require("lspconfig")[server_name].setup(server)
-				end,
-				jdtls = function()
-					require("java").setup({
-						-- Your custom jdtls settings goes here
-					})
-
-					require("lspconfig").jdtls.setup({})
 				end,
 			},
 		})

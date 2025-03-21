@@ -17,7 +17,7 @@ return {
 			write_all_buffers = false, -- write all buffers when the current one meets `condition`
 			noautocmd = false, -- do not execute autocmds when saving
 			lockmarks = false, -- lock marks when saving, see `:h lockmarks` for more details
-			debounce_delay = 500, -- delay after which a pending save is executed
+			debounce_delay = 3000, -- delay after which a pending save is executed
 			-- log debug messages to 'auto-save.log' file in neovim cache directory, set to `true` to enable
 			debug = false,
 		})
@@ -28,7 +28,7 @@ return {
 			pattern = "AutoSaveWritePost",
 			group = group,
 			callback = function(opts)
-				if opts.data.saved_buffer ~= nil then
+				if vim.g.autosave_notify and opts.data.saved_buffer ~= nil then
 					local filename = vim.api.nvim_buf_get_name(opts.data.saved_buffer)
 					require("conform").format({ bufnr = opts.data.saved_buffer })
 					if filename ~= nil then

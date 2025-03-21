@@ -20,7 +20,6 @@ return {
 				lua = { "stylua" },
 				java = { "clang-format" },
 				c = { "clang-format" },
-
 				python = { "autopep8" },
 			},
 		})

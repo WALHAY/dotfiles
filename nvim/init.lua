@@ -8,10 +8,10 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.g.neovide_no_idle = true
 vim.g.neovide_refresh_rate = 144
--- vim.g.neovide_fullscreen = true
 vim.g.neovide_floating_corner_radius = 0.5
 vim.g.neovide_scroll_animation_far_lines = 1
 vim.g.inlay_hints_enabled_by_default = false
+vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
 
 require("config.options").config()
 require("config.keymaps").config()

@@ -31,6 +31,12 @@ return {
 						show_path = "relative", -- "none", "relative", "absolute"
 					},
 				},
+				["r"] = {
+					"rename",
+					config = {
+						show_path = "relative", -- "none", "relative", "absolute"
+					},
+				},
 			},
 		},
 		default_component_configs = {

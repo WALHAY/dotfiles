@@ -24,7 +24,7 @@ return {
 		continue_restore_on_error = true, -- Keep loading the session even if there's an error
 		show_auto_restore_notif = false, -- Whether to show a notification when auto-restoring
 		cwd_change_handling = true, -- Follow cwd changes, saving a session before change and restoring after
-		lsp_stop_on_restore = true, -- Should language servers be stopped when restoring a session. Can also be a function that will be called if set. Not called on autorestore from startup
+		lsp_stop_on_restore = false, -- Should language servers be stopped when restoring a session. Can also be a function that will be called if set. Not called on autorestore from startup
 		log_level = "error", -- Sets the log level of the plugin (debug, info, warn, error).
 	},
 }

@@ -8,6 +8,7 @@ return {
 		vim.wo.relativenumber = true
 		vim.wo.number = true
 
-		vim.opt.autoread = true
+		vim.g.autosave_notify = false
+		vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 	end,
 }

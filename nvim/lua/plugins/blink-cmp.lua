@@ -18,6 +18,10 @@ return {
 				auto_show = true,
 				auto_show_delay_ms = 500,
 			},
+
+			keyword = {
+				range = "full",
+			},
 		},
 
 		-- 'default' for mappings similar to built-in completion
