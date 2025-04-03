@@ -7,12 +7,15 @@ return {
 			},
 		},
 	},
-	filetypes = { "lua" },
+	filetypes = {
+		"lua",
+	},
 	root_markers = {
 		".luarc.json",
 		".luarc.jsonc",
 		".luacheckrc",
 		".stylua.toml",
+		"lazy-lock.json",
 		"stylua.toml",
 		"selene.toml",
 		"selene.yml",

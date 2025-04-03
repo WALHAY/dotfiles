@@ -1,12 +1,15 @@
 return {
 	{
 		"folke/lazydev.nvim",
-		ft = "lua",
+		lazy = false,
 		opts = {
 			library = {
-				-- Load luvit types w
-				-- hen the `vim.uv` word is found
-				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+				{
+					path = "luvit-meta/library",
+					words = {
+						"vim%.uv",
+					},
+				},
 			},
 		},
 	},

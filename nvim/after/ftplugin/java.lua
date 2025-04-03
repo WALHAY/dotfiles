@@ -1,6 +1,8 @@
 if not vim.g.java_setup then
 	vim.g.java_setup = true
 
+	vim.notify("Setup: nvim-java")
+
 	local java = require("java")
 
 	java.setup({
@@ -17,7 +19,7 @@ if not vim.g.java_setup then
 		},
 
 		jdtls = {
-			version = "v1.43.0",
+			version = "v1.46.0",
 		},
 
 		lombok = {
@@ -28,7 +30,7 @@ if not vim.g.java_setup then
 		-- load java test plugins
 		java_test = {
 			enable = true,
-			version = "0.40.1",
+			version = "0.43.0",
 		},
 
 		-- load java debugger plugins
