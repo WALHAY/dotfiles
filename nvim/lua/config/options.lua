@@ -14,8 +14,8 @@ return {
 		vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 		vim.diagnostic.config({
-			virtual_text = false,
-			virtual_lines = true,
+			virtual_text = true,
+			virtual_lines = false,
 		})
 
 		vim.lsp.enable("lua_ls")
