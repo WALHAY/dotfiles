@@ -13,6 +13,7 @@ return {
 	},
 	{
 		"maxmx03/fluoromachine.nvim",
+		enabled = false,
 		lazy = true,
 		config = function()
 			local custom_first = {
@@ -76,5 +77,20 @@ return {
 				},
 			})
 		end,
+	},
+	{
+		"cdmill/neomodern.nvim",
+		lazy = false,
+		priority = 10000,
+		opts = {
+			theme = "roseprime",
+			variant = "dark",
+			alt_bg = true,
+			term_colors = true,
+		},
+	},
+	{
+		"rafamadriz/neon",
+		lazy = true
 	},
 }

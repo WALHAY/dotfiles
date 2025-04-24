@@ -19,7 +19,7 @@ if not vim.g.java_setup then
 		},
 
 		jdtls = {
-			version = "v1.46.0",
+			version = "v1.43.0",
 		},
 
 		lombok = {

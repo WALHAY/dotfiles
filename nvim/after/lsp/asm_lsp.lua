@@ -1,14 +1,13 @@
 return {
 	cmd = {
-		"jdtls",
+		"asm-lsp",
+	},
+	filetypes = {
+		"asm",
+		"s",
 	},
 	settings = {},
-	filetypes = {
-		"java",
-	},
 	root_markers = {
-		"gradle.build",
-		"gradlew",
 		".git",
 	},
 }

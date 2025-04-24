@@ -1,5 +1,7 @@
 return {
-	cmd = { "pylsp" },
+	cmd = {
+		"pylsp",
+	},
 	settings = {},
 	filetypes = {
 		"python",
