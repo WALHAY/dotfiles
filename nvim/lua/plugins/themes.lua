@@ -13,8 +13,7 @@ return {
 	},
 	{
 		"maxmx03/fluoromachine.nvim",
-		enabled = false,
-		lazy = true,
+		enabled = true,
 		config = function()
 			local custom_first = {
 				comments = { italic = true, fg = "#8c7aa9" },
@@ -45,8 +44,7 @@ return {
 				transparent = false,
 				styles = {},
 				colors = function(_, color)
-					local darken = color.darken
-					return vim.g.colors
+					return custom_first
 				end,
 				overrides = {},
 				plugins = {
@@ -91,6 +89,19 @@ return {
 	},
 	{
 		"rafamadriz/neon",
-		lazy = true
+		lazy = true,
+	},
+	{
+		"JoosepAlviste/palenightfall.nvim",
+		lazy = true,
+	},
+	{
+		"zootedb0t/citruszest.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"AhmedAbdulrahman/aylin.vim",
+		lazy = false,
 	},
 }

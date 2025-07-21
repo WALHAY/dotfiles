@@ -27,12 +27,12 @@ return {
 						desc = "Config",
 						action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
 					},
-					{
-						icon = "",
-						key = "s",
-						desc = "Open Workspace",
-						action = ":WorkspacesOpen",
-					},
+					-- {
+					-- 	icon = "",
+					-- 	key = "s",
+					-- 	desc = "Open Workspace",
+					-- 	action = ":WorkspacesOpen",
+					-- },
 					{
 						icon = "󰒲 ",
 						key = "L",

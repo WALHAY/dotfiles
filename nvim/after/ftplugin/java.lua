@@ -1,6 +1,4 @@
 if not vim.g.java_setup then
-	vim.g.java_setup = true
-
 	vim.notify("Setup: nvim-java")
 
 	local java = require("java")
@@ -19,7 +17,7 @@ if not vim.g.java_setup then
 		},
 
 		jdtls = {
-			version = "v1.43.0",
+			version = "v1.46.0",
 		},
 
 		lombok = {
@@ -49,6 +47,8 @@ if not vim.g.java_setup then
 			dap = false,
 		},
 	})
+
+	vim.g.java_setup = true
 
 	vim.api.nvim_create_autocmd("LspAttach", {
 		group = vim.api.nvim_create_augroup("JavaLspAttach", { clear = true }),
