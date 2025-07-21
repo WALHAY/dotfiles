@@ -53,7 +53,7 @@ return {
 		},
 		filesystem = {
 			follow_current_file = {
-				enabled = true,
+				enabled = false,
 			},
 			filtered_items = {
 				hide_dotfiles = false,
