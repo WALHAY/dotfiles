@@ -2,9 +2,9 @@ return {
 	config = function()
 		-- vim.g.neon_style = "dark"
 		-- vim.cmd("colorscheme palenightfall")
-		-- vim.cmd("colorscheme citruszest")
+		vim.cmd("colorscheme citruszest")
 		-- vim.cmd("colorscheme aylin")
-		vim.cmd("colorscheme fluoromachine")
+		-- vim.cmd("colorscheme fluoromachine")
 
 		vim.opt.clipboard = "unnamedplus"
 

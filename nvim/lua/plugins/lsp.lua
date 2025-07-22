@@ -1,5 +1,6 @@
 return { -- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
+	lazy = false,
 	dependencies = {
 		-- Automatically install LSPs and related tools to stdpath for Neovim
 		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
@@ -7,6 +8,7 @@ return { -- LSP Configuration & Plugins
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
 		-- used for completion, annotations and signatures of Neovim apis
+		{"j-hui/fidget.nvim", opts = {}},
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",
