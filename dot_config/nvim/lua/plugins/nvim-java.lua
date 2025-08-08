@@ -1,6 +1,6 @@
 return {
 	"nvim-java/nvim-java",
-	lazy = true,
+	lazy = false,
 	filetype = "java",
 	config = false
 }

@@ -98,6 +98,11 @@ return {
 	{
 		"zootedb0t/citruszest.nvim",
 		lazy = false,
+		opts = {
+			option = {
+				transparent = true,
+			},
+		},
 		priority = 1000,
 	},
 	{
