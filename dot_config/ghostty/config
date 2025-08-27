@@ -51,9 +51,9 @@
 # new windows, tabs, etc.
 font-family = JetBrains Mono
 
-font-family-bold = 
-font-family-italic = 
-font-family-bold-italic = 
+font-family-bold = JetBrains Mono
+font-family-italic = JetBrains Mono
+font-family-bold-italic = JetBrains Mono
 # The named font style to use for each of the requested terminal font styles.
 # This looks up the style based on the font style string advertised by the
 # font itself. For example, "Iosevka Heavy" has a style of "Heavy".
@@ -142,7 +142,7 @@ font-feature =  +liga
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 16
+font-size = 20
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -197,7 +197,7 @@ font-thicken = true
 # Has no effect when `font-thicken` is set to `false`.
 # 
 # This is currently only supported on macOS.
-font-thicken-strength = 80
+font-thicken-strength = 30
 
 # What color space to use when performing alpha blending.
 # 
@@ -578,7 +578,8 @@ background-opacity = 0.7
 # need to set environment-specific settings and/or install third-party plugins
 # in order to support background blur, as there isn't a unified interface for
 # doing so.
-background-blur = false
+background-blur = true
+background-blur-radius = 1
 
 # The opacity level (opposite of transparency) of an unfocused split.
 # Unfocused splits by default are slightly faded out to make it easier to see
@@ -1081,7 +1082,7 @@ window-padding-y = 2
 # apply. The other padding is applied first and may affect how many grid cells
 # actually exist, and this is applied last in order to balance the padding
 # given a certain viewport size and grid cell size.
-window-padding-balance = false
+window-padding-balance = true
 
 # The color of the padding area of the window. Valid values are:
 # 
@@ -1102,8 +1103,7 @@ window-padding-balance = false
 #   do not look good extended.
 # * The nearest row contains a perfect fit powerline character. These
 #   don't look good extended.
-# 
-window-padding-color = background
+window-padding-color = extend
 
 # Synchronize rendering with the screen refresh rate. If true, this will
 # minimize tearing and align redraws with the screen but may cause input
@@ -1123,13 +1123,13 @@ window-vsync = true
 # If true, new windows and tabs will inherit the working directory of the
 # previously focused window. If no window was previously focused, the default
 # working directory will be used (the `working-directory` option).
-window-inherit-working-directory = true
+window-inherit-working-directory = false
 
 # If true, new windows and tabs will inherit the font size of the previously
 # focused window. If no window was previously focused, the default font size
 # will be used. If this is false, the default font size specified in the
 # configuration `font-size` will be used.
-window-inherit-font-size = true
+window-inherit-font-size = false
 
 # Configure a preference for window decorations. This setting specifies
 # a _preference_; the actual OS, desktop environment, window manager, etc.
@@ -1467,7 +1467,7 @@ image-storage-limit = 320000000
 # paste is always enabled even if this is `false`.
 # 
 # The default value is true on Linux and macOS.
-copy-on-select = true
+copy-on-select = false
 
 # The time in milliseconds between clicks to consider a click a repeat
 # (double, triple, etc.) or an entirely new single click. A value of zero will
@@ -1629,7 +1629,7 @@ quick-terminal-animation-duration = 0.2
 
 # Automatically hide the quick terminal when focus shifts to another window.
 # Set it to false for the quick terminal to remain open even when it loses focus.
-quick-terminal-autohide = true
+quick-terminal-autohide = false
 
 # This configuration option determines the behavior of the quick terminal
 # when switching between macOS spaces. macOS spaces are virtual desktops
@@ -1857,7 +1857,7 @@ macos-non-native-fullscreen = false
 # most cases.
 # 
 # Changing this option at runtime only applies to new windows.
-macos-titlebar-style = native
+macos-titlebar-style = hidden
 
 # Whether the proxy icon in the macOS titlebar is visible. The proxy icon
 # is the icon that represents the folder of the current working directory.
@@ -1981,7 +1981,7 @@ macos-secure-input-indication = true
 #     separate framework and cannot be customized without significant
 #     effort.
 # 
-macos-icon = glass
+macos-icon = custom-style
 
 # The material to use for the frame of the macOS app icon.
 # 
@@ -1993,7 +1993,7 @@ macos-icon = glass
 #  * `chrome` - A shiny chrome frame.
 # 
 # This only has an effect when `macos-icon` is set to `custom-style`.
-macos-icon-frame = chrome
+macos-icon-frame = beige
 
 # The color of the ghost in the macOS app icon.
 # 
@@ -2003,7 +2003,7 @@ macos-icon-frame = chrome
 # This only has an effect when `macos-icon` is set to `custom-style`.
 # 
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-macos-icon-ghost-color = 
+macos-icon-ghost-color = 000000
 
 # The color of the screen in the macOS app icon.
 # 
@@ -2015,7 +2015,7 @@ macos-icon-ghost-color =
 # `custom-style`.
 # 
 # This only has an effect when `macos-icon` is set to `custom-style`.
-macos-icon-screen-color = 
+macos-icon-screen-color = 000000
 
 # Put every surface (tab, split, window) into a dedicated Linux cgroup.
 # 
@@ -2074,103 +2074,6 @@ linux-cgroup-processes-limit =
 # must always be able to move themselves into an isolated cgroup.
 linux-cgroup-hard-fail = false
 
-# Enable or disable GTK's OpenGL debugging logs. The default is `true` for
-# debug builds, `false` for all others.
-gtk-opengl-debug = false
-
-# Obsolete configuration that should not be set. This was deprecated in
-# Ghostty 1.1.3 and no longer has any effect. The configuration key will
-# be fully removed in 1.2.0. You can manually override the GSK renderer
-# using standard environment variables such as `GSK_RENDERER` (from GTK).
-gtk-gsk-renderer = default
-
-# If `true`, the Ghostty GTK application will run in single-instance mode:
-# each new `ghostty` process launched will result in a new window if there is
-# already a running process.
-# 
-# If `false`, each new ghostty process will launch a separate application.
-# 
-# The default value is `desktop` which will default to `true` if Ghostty
-# detects that it was launched from the `.desktop` file such as an app
-# launcher (like Gnome Shell)  or by D-Bus activation. If Ghostty is launched
-# from the command line, it will default to `false`.
-# 
-# Note that debug builds of Ghostty have a separate single-instance ID
-# so you can test single instance without conflicting with release builds.
-gtk-single-instance = desktop
-
-# When enabled, the full GTK titlebar is displayed instead of your window
-# manager's simple titlebar. The behavior of this option will vary with your
-# window manager.
-# 
-# This option does nothing when `window-decoration` is false or when running
-# under macOS.
-# 
-# Changing this value at runtime and reloading the configuration will only
-# affect new windows.
-gtk-titlebar = true
-
-# Determines the side of the screen that the GTK tab bar will stick to.
-# Top, bottom, left, right, and hidden are supported. The default is top.
-# 
-# If this option has value `left` or `right` when using Adwaita, it falls
-# back to `top`. `hidden`, meaning that tabs don't exist, is not supported
-# without using Adwaita, falling back to `top`.
-# 
-# When `hidden` is set and Adwaita is enabled, a tab button displaying the
-# number of tabs will appear in the title bar. It has the ability to open a
-# tab overview for displaying tabs. Alternatively, you can use the
-# `toggle_tab_overview` action in a keybind if your window doesn't have a
-# title bar, or you can switch tabs with keybinds.
-gtk-tabs-location = top
-
-# If this is `true`, the titlebar will be hidden when the window is maximized,
-# and shown when the titlebar is unmaximized. GTK only.
-gtk-titlebar-hide-when-maximized = false
-
-# Determines the appearance of the top and bottom bars when using the
-# Adwaita tab bar. This requires `gtk-adwaita` to be enabled (it is
-# by default).
-# 
-# Valid values are:
-# 
-#  * `flat` - Top and bottom bars are flat with the terminal window.
-#  * `raised` - Top and bottom bars cast a shadow on the terminal area.
-#  * `raised-border` - Similar to `raised` but the shadow is replaced with a
-#    more subtle border.
-# 
-# Changing this value at runtime will only affect new windows.
-adw-toolbar-style = raised
-
-# If `true` (default), then the Ghostty GTK tabs will be "wide." Wide tabs
-# are the new typical Gnome style where tabs fill their available space.
-# If you set this to `false` then tabs will only take up space they need,
-# which is the old style.
-gtk-wide-tabs = true
-
-# If `true` (default), Ghostty will enable Adwaita theme support. This
-# will make `window-theme` work properly and will also allow Ghostty to
-# properly respond to system theme changes, light/dark mode changing, etc.
-# This requires a GTK4 desktop with a GTK4 theme.
-# 
-# If you are running GTK3 or have a GTK3 theme, you may have to set this
-# to false to get your theme picked up properly. Having this set to true
-# with GTK3 should not cause any problems, but it may not work exactly as
-# expected.
-# 
-# This configuration only has an effect if Ghostty was built with
-# Adwaita support.
-gtk-adwaita = true
-
-# Custom CSS files to be loaded.
-# 
-# This configuration can be repeated multiple times to load multiple files.
-# Prepend a ? character to the file path to suppress errors if the file does
-# not exist. If you want to include a file that begins with a literal ?
-# character, surround the file path in double quotes (").
-# The file size limit for a single stylesheet is 5MiB.
-gtk-custom-css = 
-
 # If `true` (default), applications running in the terminal can show desktop
 # notifications using certain escape sequences such as OSC 9 or OSC 777.
 desktop-notifications = true
@@ -2213,7 +2116,7 @@ enquiry-response =
 # preference stored in the standard user defaults (`defaults(1)`).
 # 
 # Changing this value at runtime works after a small delay.
-auto-update = 
+auto-update = check
 
 # The release channel to use for auto-updates.
 # 
@@ -2235,5 +2138,5 @@ auto-update =
 # Ghostty to take effect.
 # 
 # This only works on macOS since only macOS has an auto-update feature.
-auto-update-channel = 
+auto-update-channel = tip
 
