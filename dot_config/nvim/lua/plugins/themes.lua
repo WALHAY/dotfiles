@@ -8,12 +8,9 @@ return {
 		lazy = true,
 	},
 	{
-		"eldritch-theme/eldritch.nvim",
-		lazy = true,
-	},
-	{
 		"maxmx03/fluoromachine.nvim",
-		enabled = true,
+		lazy = true,
+		enabled = false,
 		config = function()
 			local custom_first = {
 				comments = { italic = true, fg = "#8c7aa9" },
@@ -77,21 +74,6 @@ return {
 		end,
 	},
 	{
-		"cdmill/neomodern.nvim",
-		lazy = false,
-		priority = 10000,
-		opts = {
-			theme = "roseprime",
-			variant = "dark",
-			alt_bg = true,
-			term_colors = true,
-		},
-	},
-	{
-		"rafamadriz/neon",
-		lazy = true,
-	},
-	{
 		"JoosepAlviste/palenightfall.nvim",
 		lazy = true,
 	},
@@ -101,12 +83,14 @@ return {
 		opts = {
 			option = {
 				transparent = true,
+				italic = true,
+				bold = true,
 			},
 		},
 		priority = 1000,
 	},
 	{
 		"AhmedAbdulrahman/aylin.vim",
-		lazy = false,
+		lazy = true,
 	},
 }

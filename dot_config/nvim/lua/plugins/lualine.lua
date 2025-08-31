@@ -4,8 +4,9 @@ return {
 	lazy = false,
 	opts = {
 		options = {
+			-- theme = 'horizon',
+			theme = 'citruszest',
 			globalstatus = true,
-			theme = "horizon",
 			icons_enabled = true,
 			disabled_filetypes = {
 				winbar = {

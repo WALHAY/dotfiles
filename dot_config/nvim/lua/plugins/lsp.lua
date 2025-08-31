@@ -18,6 +18,19 @@ return { -- LSP Configuration & Plugins
 			},
 		},
 		{ "Bilal2453/luvit-meta", lazy = true },
+		{
+			"antosha417/nvim-lsp-file-operations",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				-- Uncomment whichever supported plugin(s) you use
+				-- "nvim-tree/nvim-tree.lua",
+				"nvim-neo-tree/neo-tree.nvim",
+				-- "simonmclean/triptych.nvim"
+			},
+			config = function()
+				require("lsp-file-operations").setup()
+			end,
+		},
 	},
 	config = function()
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -54,7 +67,7 @@ return { -- LSP Configuration & Plugins
 		require("mason-lspconfig").setup({
 			ensure_installed = { "clangd", "jdtls" },
 			automatic_enable = true,
-			automatic_installation = true,
+			automatic_installation = false,
 			handlers = {
 				function(server_name)
 					require("java").setup()
@@ -66,21 +79,10 @@ return { -- LSP Configuration & Plugins
 			},
 		})
 
-		local java_filetypes = { "java", "class", "javap", "jsp" }
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = java_filetypes,
-			callback = function()
-				require("java").setup()
-			end,
-		})
-
 		require("ufo").setup({
 			provider_selector = function(bufnr, filetype, buftype)
-				if filetype == "c" or filetype == "cpp" then
-        			return {'treesitter', 'indent'}
-				end
-        		return ''
-			end
+				return { "treesitter", "indent" }
+			end,
 		})
 	end,
 }
