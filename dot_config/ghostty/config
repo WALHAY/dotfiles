@@ -793,7 +793,7 @@ x11-instance-name =
 #   * `home` - The home directory of the executing user.
 # 
 #   * `inherit` - The working directory of the launching process.
-working-directory = 
+working-directory = home
 
 # Key bindings. The format is `trigger=action`. Duplicate triggers will
 # overwrite previously set values. The list of actions is available in
@@ -1123,7 +1123,7 @@ window-vsync = true
 # If true, new windows and tabs will inherit the working directory of the
 # previously focused window. If no window was previously focused, the default
 # working directory will be used (the `working-directory` option).
-window-inherit-working-directory = false
+window-inherit-working-directory = true
 
 # If true, new windows and tabs will inherit the font size of the previously
 # focused window. If no window was previously focused, the default font size
