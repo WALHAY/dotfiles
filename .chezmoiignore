@@ -1,7 +1,7 @@
 README.md
-{{ if ne .chezmoi.os "darwin" }}
+{{- if ne .chezmoi.os "darwin" }}
 hypr
-{{ end }}
-{{ if ne .chezmoi.os "linux" }}
+{{- end }}
+{{- if ne .chezmoi.os "linux" }}
 aerospace
-{{ end }}
+{{- end }}
