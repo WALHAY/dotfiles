@@ -4,8 +4,8 @@ return {
 	lazy = false,
 	opts = {
 		options = {
-			-- theme = 'horizon',
-			theme = 'citruszest',
+			theme = 'horizon',
+			-- theme = 'citruszest',
 			globalstatus = true,
 			icons_enabled = true,
 			disabled_filetypes = {
