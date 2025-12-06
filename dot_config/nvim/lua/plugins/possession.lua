@@ -10,7 +10,7 @@ return {
 		prompt_no_cr = false,
 		autosave = {
 			current = true, -- or fun(name): boolean
-			cwd = true, -- or fun(): boolean
+			cwd = false, -- or fun(): boolean
 			tmp = false, -- or fun(): boolean
 			tmp_name = "tmp", -- or fun(): string
 			on_load = true,

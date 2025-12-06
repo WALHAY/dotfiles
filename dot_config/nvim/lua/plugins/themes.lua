@@ -79,7 +79,8 @@ return {
 	},
 	{
 		"zootedb0t/citruszest.nvim",
-		lazy = false,
+		enabled = false,
+		lazy = true,
 		opts = {
 			option = {
 				transparent = true,
@@ -92,5 +93,23 @@ return {
 	{
 		"AhmedAbdulrahman/aylin.vim",
 		lazy = true,
+	},
+	{
+		"rijulpaul/nightblossom.nvim",
+		name = "nightblossom",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			variant = "sakura", -- "spring", "sakura", "pastel"
+			transparent = true, -- Enable background transparency
+			integrations = {
+				treesitter = true, -- TreeSitter highlighting
+			},
+		},
+	},
+	{
+   		"ianklapouch/wildberries.nvim",
+   		name = "wildberries",
+		enabled = false,
 	},
 }
