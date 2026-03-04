@@ -6,14 +6,14 @@
     "spacing": 5,
 	"margin": "6 6 0 6",
     "modules-left": [
-      "hyprland/window",
-	  "hyprland/workspaces"
+      "niri/window",
+	  "niri/workspaces"
     ],
     "modules-center": [
-      "sway/window",
       "clock"
     ],
     "modules-right": [
+      "tray",
       "mpd",
       "temperature",
       "cpu",
@@ -24,22 +24,18 @@
       "keyboard-state",
       "battery",
       "battery#bat2",
-      "tray",
     ],
-    "hyprland/window": {
+    "niri/window": {
       "format": "{title}",
       "max-length": 20,
       "rewrite": {
         "^(?!.*\\S).*": "Finder"
       }
     },
-	"hyprland/workspaces": {
+	"niri/workspaces": {
     	"active-only": false,
     	"all-outputs": true,
-    	"persistent-workspaces": {
-    	    "eDP-1": [1, 2, 3, 4, 5]
-    	},
-    	"format": "{name}",
+    	"format": "{index}",
     	"on-click": "activate",
 	},
     "keyboard-state": {
@@ -92,13 +88,6 @@
       "on-click-right": "foot -a ncmpcpp ncmpcpp",
       "on-scroll-up": "mpc volume +2",
       "on-scroll-down": "mpc volume -2"
-    },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
     },
     "tray": {
       "spacing": 10
