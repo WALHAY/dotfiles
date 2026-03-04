@@ -1,6 +1,7 @@
 return {
 	config = function()
-		vim.cmd('colorscheme nightblossom-sakura')
+		-- vim.cmd('colorscheme nightblossom-sakura')
+		vim.cmd('colorscheme citruszest')
 
 		vim.opt.clipboard = "unnamedplus"
 

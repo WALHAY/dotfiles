@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
-	opts = {}
+	opts = {},
 	-- config = function()
 	-- 	local colors = vim.g.colors
 	-- 	local red = colors.red

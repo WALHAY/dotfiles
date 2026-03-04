@@ -79,7 +79,7 @@ return {
 	},
 	{
 		"zootedb0t/citruszest.nvim",
-		enabled = false,
+		enabled = true,
 		lazy = true,
 		opts = {
 			option = {

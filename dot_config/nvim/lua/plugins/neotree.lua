@@ -37,6 +37,7 @@ return {
 						show_path = "relative", -- "none", "relative", "absolute"
 					},
 				},
+				["Z"] = "expand_all_subnodes",
 			},
 		},
 		default_component_configs = {
