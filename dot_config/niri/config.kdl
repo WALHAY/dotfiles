@@ -11,7 +11,7 @@ input {
     }
 
     touchpad {
-        tap
+        // tap
         // dwt
         // dwtp
         // drag false
@@ -48,6 +48,7 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+// workspaces
 output "eDP-1" {
     mode "3456x2234@120.030"
 
@@ -63,6 +64,7 @@ layout {
     gaps 8
 
     center-focused-column "never"
+	always-center-single-column
 
     // You can customize the widths that toggles between.
     preset-column-widths {
@@ -156,7 +158,7 @@ layout {
 
 // startup actions
 spawn-at-startup "waybar"
-spawn-at-startup "swaybg -i ~/Downloads/niggers.jpg"
+spawn-at-startup "swww-daemon"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -209,7 +211,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -235,6 +237,10 @@ binds {
     // but you need to manually put each argument in separate "" quotes.
     XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+	// control backlight of keyboard
+	XF86LaunchA allow-when-locked=true { spawn "brightnessctl" "--device=kbd_backlight" "set" "5%-"; }
+	XF86Search allow-when-locked=true { spawn "brightnessctl" "--device=kbd_backlight" "set" "+5%"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
