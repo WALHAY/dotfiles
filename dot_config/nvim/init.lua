@@ -1,3 +1,3 @@
-require("config.lazy")
-require("config.options").config()
-require("config.keymaps").config()
+require("options").setup()
+require("binds").setup()
+
