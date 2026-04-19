@@ -48,6 +48,14 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+cursor {
+	xcursor-size 30
+}
+
+debug {
+	render-drm-device "/dev/dri/renderD128"
+}
+
 // workspaces
 output "eDP-1" {
     mode "3456x2234@120.030"
@@ -157,8 +165,7 @@ layout {
 }
 
 // startup actions
-spawn-at-startup "waybar"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "noctalia-shell"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -212,7 +219,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+R hotkey-overlay-title="Run an Application: fuzzel" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
 

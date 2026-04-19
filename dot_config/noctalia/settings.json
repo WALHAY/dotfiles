@@ -27,13 +27,12 @@
         "viewMode": "list"
     },
     "audio": {
+        "cavaFrameRate": 30,
         "mprisBlacklist": [
         ],
         "preferredPlayer": "yandex-music",
-        "spectrumFrameRate": 30,
         "visualizerType": "linear",
         "volumeFeedback": false,
-        "volumeFeedbackSoundFile": "",
         "volumeOverdrive": false,
         "volumeStep": 5
     },
@@ -44,36 +43,23 @@
         "barType": "simple",
         "capsuleColorKey": "primary",
         "capsuleOpacity": 0.6,
-        "contentPadding": 2,
         "density": "spacious",
         "displayMode": "always_visible",
         "floating": false,
-        "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
-        "middleClickAction": "none",
-        "middleClickCommand": "",
-        "middleClickFollowMouse": false,
         "monitors": [
         ],
-        "mouseWheelAction": "none",
-        "mouseWheelWrap": true,
         "outerCorners": false,
         "position": "top",
-        "reverseScroll": false,
-        "rightClickAction": "controlCenter",
-        "rightClickCommand": "",
-        "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
         "showCapsule": true,
-        "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": true,
-        "widgetSpacing": 6,
         "widgets": {
             "center": [
                 {
@@ -97,15 +83,18 @@
                     "useCustomFont": false
                 },
                 {
-                    "compactMode": false,
+                    "compactMode": true,
+                    "compactShowAlbumArt": true,
+                    "compactShowVisualizer": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 145,
                     "panelShowAlbumArt": true,
+                    "panelShowVisualizer": true,
                     "scrollingMode": "hover",
                     "showAlbumArt": true,
-                    "showArtistFirst": true,
+                    "showArtistFirst": false,
                     "showProgressRing": true,
                     "showVisualizer": false,
                     "textColor": "none",
@@ -115,13 +104,9 @@
             ],
             "left": [
                 {
-                    "colorizeSystemIcon": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
                     "icon": "rocket",
                     "iconColor": "none",
-                    "id": "Launcher",
-                    "useDistroLogo": false
+                    "id": "Launcher"
                 },
                 {
                     "iconColor": "none",
@@ -132,15 +117,14 @@
                     "colorizeIcons": false,
                     "emptyColor": "tertiary",
                     "enableScrollWheel": true,
-                    "focusedColor": "primary",
+                    "focusedColor": "secondary",
                     "followFocusedScreen": false,
-                    "fontWeight": "bold",
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
-                    "occupiedColor": "secondary",
+                    "occupiedColor": "primary",
                     "pillSize": 0.6,
                     "showApplications": false,
                     "showBadge": true,
@@ -151,9 +135,9 @@
                     "colorizeIcons": false,
                     "hideMode": "hidden",
                     "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "maxWidth": 200,
                     "scrollingMode": "hover",
-                    "showIcon": true,
+                    "showIcon": false,
                     "textColor": "none",
                     "useFixedWidth": false
                 }
@@ -196,7 +180,7 @@
                 },
                 {
                     "deviceNativePath": "__default__",
-                    "displayMode": "graphic",
+                    "displayMode": "icon-always",
                     "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
@@ -216,8 +200,6 @@
         }
     },
     "brightness": {
-        "backlightDeviceMappings": [
-        ],
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
@@ -239,7 +221,7 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "faithful",
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -311,15 +293,13 @@
     "desktopWidgets": {
         "enabled": false,
         "gridSnap": false,
-        "gridSnapScale": false,
         "monitorWidgets": [
             {
                 "name": "eDP-1",
                 "widgets": [
                 ]
             }
-        ],
-        "overviewEnabled": true
+        ]
     },
     "dock": {
         "animationSpeed": 1,
@@ -330,16 +310,7 @@
         "dockType": "floating",
         "enabled": false,
         "floatingRatio": 1,
-        "groupApps": false,
-        "groupClickAction": "cycle",
-        "groupContextMenuMode": "extended",
-        "groupIndicatorStyle": "dots",
         "inactiveIndicators": false,
-        "indicatorColor": "primary",
-        "indicatorOpacity": 0.6,
-        "indicatorThickness": 3,
-        "launcherIconColor": "none",
-        "launcherPosition": "end",
         "monitors": [
         ],
         "onlySameOutput": true,
@@ -347,8 +318,7 @@
         ],
         "pinnedStatic": false,
         "position": "bottom",
-        "showDockIndicator": false,
-        "showLauncherIcon": false,
+        "showFrameIndicator": true,
         "sitOnFrame": false,
         "size": 1
     },
@@ -364,9 +334,7 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.5,
-        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
-        "enableLockScreenMediaControls": false,
         "enableShadows": false,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
@@ -402,7 +370,6 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "passwordChars": false,
         "radiusRatio": 1.2,
         "reverseScroll": false,
         "scaleRatio": 1.1500000000000001,
@@ -414,7 +381,7 @@
         "showHibernateOnLockScreen": false,
         "showScreenCorners": false,
         "showSessionButtonsOnLockScreen": true,
-        "telemetryEnabled": false
+        "telemetryEnabled": true
     },
     "hooks": {
         "darkModeChange": "",
@@ -426,20 +393,6 @@
         "session": "",
         "startup": "",
         "wallpaperChange": ""
-    },
-    "idle": {
-        "customCommands": "[]",
-        "enabled": false,
-        "fadeDuration": 5,
-        "lockCommand": "",
-        "lockTimeout": 660,
-        "resumeLockCommand": "",
-        "resumeScreenOffCommand": "",
-        "resumeSuspendCommand": "",
-        "screenOffCommand": "",
-        "screenOffTimeout": 600,
-        "suspendCommand": "",
-        "suspendTimeout": 1800
     },
     "location": {
         "analogClockInCalendar": false,
@@ -457,13 +410,11 @@
     },
     "network": {
         "airplaneModeEnabled": false,
-        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "wifi",
         "wifiDetailsViewMode": "grid",
         "wifiEnabled": true
     },
@@ -475,10 +426,6 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "nightTemp": "4000"
-    },
-    "noctaliaPerformance": {
-        "disableDesktopWidgets": true,
-        "disableWallpaper": false
     },
     "notifications": {
         "backgroundOpacity": 0.6,
@@ -584,19 +531,12 @@
                 "countdownEnabled": true,
                 "enabled": true,
                 "keybind": "7"
-            },
-            {
-                "action": "userspaceReboot",
-                "command": "",
-                "countdownEnabled": true,
-                "enabled": false,
-                "keybind": ""
             }
         ],
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 57,
+    "settingsVersion": 53,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -626,28 +566,29 @@
         "enableUserTheming": false
     },
     "ui": {
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
         "fontDefault": "Noto Sans",
         "fontDefaultScale": 1.1,
         "fontFixed": "monospace",
-        "fontFixedScale": 1,
+        "fontFixedScale": 1.1,
+        "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.93,
         "panelsAttachedToBar": true,
-        "scrollbarAlwaysVisible": false,
         "settingsPanelMode": "attached",
-        "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true,
-        "translucentWidgets": true
+        "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/walhay/.config/niri",
+        "directory": "/home/walhay/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
         ],
         "fillColor": "#000000",
-        "fillMode": "fit",
+        "fillMode": "crop",
         "hideWallpaperFilenames": false,
         "monitorDirectories": [
         ],
