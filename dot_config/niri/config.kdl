@@ -57,10 +57,22 @@ debug {
 }
 
 // workspaces
+output "DP-3" {
+    mode "3440x1440@143.923"
+
+	variable-refresh-rate on-demand=true
+
+	scale 0.75
+
+    transform "normal"
+
+    position x=1280 y=0
+}
+
 output "eDP-1" {
     mode "3456x2234@120.030"
 
-    scale 1.5
+	scale 1.5
 
     transform "normal"
 
