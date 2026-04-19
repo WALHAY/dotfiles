@@ -5,19 +5,14 @@
   home.homeDirectory = "/home/walhay";
 
   home.packages = with pkgs; [
-    fuzzel
     neovim
-    swaybg
-    waybar
     vim
     ghostty
-    mako
     firefox
     telegram-desktop
     git
     chezmoi
     starship
-    home-manager
 	zsh
   ];
 
