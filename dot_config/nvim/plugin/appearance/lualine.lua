@@ -19,7 +19,7 @@ require("breadcrumbs").setup()
 
 require("lualine").setup({
 	options = {
-		theme = "citruszest",
+		-- theme = "wildberries",
 		globalstatus = true,
 		icons_enabled = true,
 		disabled_filetypes = {
