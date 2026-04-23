@@ -3,7 +3,7 @@ vim.pack.add({
 })
 
 require("neo-tree").setup({
-	close_if_last_window = false,
+	close_if_last_window = true,
 	window = {
 		width = 32,
 		mappings = {

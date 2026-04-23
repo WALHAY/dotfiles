@@ -5,11 +5,18 @@ require("mini.sessions").setup({
 	autowrite = true,
 	file = "Session.vim",
 	force = { read = false, write = true, delete = false },
+	hooks = {
+		pre = {
+			write = function()
+				vim.cmd("Neotree close")
+			end,
+		},
+	},
 })
 
 vim.api.nvim_create_autocmd("PackChanged", {
 	pattern = "nvim-mini/mini.sessions",
-	callback = function(ev)
+	callback = function()
 		vim.schedule(setup_sessions)
 	end,
 })
@@ -23,12 +30,17 @@ function setup_sessions()
 			autowrite = true,
 			file = "Session.vim",
 			force = { read = false, write = true, delete = false },
+			hooks = {
+				pre = {
+					write = function()
+						vim.cmd("Neotree close")
+					end,
+				},
+			},
 		})
 	end
 
 	local function save_session(new_session)
-		vim.cmd("Neotree close")
-
 		if new_session or not pcall(ms.write) then
 			local name = vim.fn.input({ prompt = "Session name: ", cancelreturn = "" })
 			if name ~= "" then
