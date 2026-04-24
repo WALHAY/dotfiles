@@ -24,6 +24,7 @@ M.setup = function()
 		virtual_text = true,
 		virtual_lines = false,
 	})
+	require('vim._core.ui2').enable({})
 end
 
 return M

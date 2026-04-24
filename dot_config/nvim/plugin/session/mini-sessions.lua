@@ -1,7 +1,7 @@
 vim.pack.add({ "https://github.com/nvim-mini/mini.sessions" })
 
 require("mini.sessions").setup({
-	autoread = false,
+	autoread = true,
 	autowrite = true,
 	file = "Session.vim",
 	force = { read = false, write = true, delete = false },
@@ -70,6 +70,7 @@ function setup_sessions()
 	vim.keymap.set("n", "<leader>qS", function()
 		save_session(true)
 	end, { desc = "Session: Save New" })
+	vim.keymap.set("n", "<leader>ql", ms.read, { desc = "Session: Select" })
 	vim.keymap.set("n", "<leader>qp", ms.select, { desc = "Session: Select" })
 	vim.keymap.set("n", "<leader>qd", delete_session, { desc = "Session: Delete" })
 	vim.keymap.set("n", "<leader>qr", ms.restart, { desc = "Session: Restart" })

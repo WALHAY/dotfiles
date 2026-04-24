@@ -8,7 +8,8 @@ local function create_gradle_task(name)
 				cwd = vim.fn.getcwd(),
 				components = {
 					{ "default", output = "wrap" },
-					{ "on_output_quickfix" },
+					"on_result_diagnostics",
+					{ "on_result_diagnostics_quickfix", { open = true } },
 				},
 				metadata = { priority = 100 },
 			}
