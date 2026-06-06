@@ -6,13 +6,16 @@ function M.delete_all_buffers()
 
 	for _, buf in ipairs(bufs) do
 		if buf ~= current and not vim.api.nvim_buf_is_loaded(buf) then
-			pcall(vim.api.nvim_buf_delete, buf, { })
+			pcall(vim.api.nvim_buf_delete, buf, {})
 		end
 	end
 end
 
 M.setup = function()
 	vim.keymap.set("n", "<leader>bD", M.delete_all_buffers, { desc = "Delete all buffers" })
+
+	vim.keymap.set({"n", "x", "o"}, "<C-d>", "<C-d>zz")
+	vim.keymap.set({"n", "x", "o"}, "<C-u>", "<C-u>zz")
 end
 
 return M

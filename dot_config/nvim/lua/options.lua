@@ -24,7 +24,15 @@ M.setup = function()
 		virtual_text = true,
 		virtual_lines = false,
 	})
-	require('vim._core.ui2').enable({})
+
+	-- vim.o.foldmethod = "expr"
+	-- vim.o.foldexpr = "v:lua.vim.lsp.foldexpr()"
+	vim.o.foldmethod = 'manual'
+	vim.o.foldlevelstart = 99
+	vim.o.foldlevel = 99
+	vim.o.foldenable = false
+
+	require("vim._core.ui2").enable({})
 end
 
 return M

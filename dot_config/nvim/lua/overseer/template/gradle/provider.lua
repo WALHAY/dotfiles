@@ -27,7 +27,7 @@ return {
 			return
 		end
 
-		local tasks = { "runClient", "bootRun", "spotlessApply", "ktfmtMain", "build", "test", "clean" }
+		local tasks = { "runClient", "bootRun", "spotlessApply", "ktfmtMain", "build", "test", "clean", "build --continuous" }
 
 		local templates = {}
 		for _, name in ipairs(tasks) do
