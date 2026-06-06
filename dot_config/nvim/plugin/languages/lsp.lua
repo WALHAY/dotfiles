@@ -26,13 +26,16 @@ require("mason-lspconfig").setup({
 })
 
 require("java").setup({
+	lombok = {
+		enable = false,
+	},
 	jdk = { auto_install = false },
 	jdtls = {
 		soversion = nil,
 	},
 	spring_boot_tools = { enable = false },
-	java_test = { enable = true },
-	java_debug_adapter = { enable = true },
+	java_test = { enable = false },
+	java_debug_adapter = { enable = false },
 })
 
 require("kotlin").setup({
