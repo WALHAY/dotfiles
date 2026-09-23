@@ -18,10 +18,29 @@ vim.pack.add({
 require("oil").setup()
 require("trouble").setup()
 require("mason").setup()
+
+local jdtls_source = "brew" -- Set to "brew" to use Homebrew's JDTLS.
+local mason_jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+local jdtls_path
+local ensure_installed = { "kotlin_lsp", "clangd" }
+
+if jdtls_source == "mason" then
+	jdtls_path = mason_jdtls_path
+	table.insert(ensure_installed, "jdtls")
+elseif jdtls_source == "brew" then
+	local brew_prefix = vim.fn.systemlist({ "brew", "--prefix", "jdtls" })[1]
+	if vim.v.shell_error ~= 0 or not brew_prefix then
+		error("Unable to resolve Homebrew JDTLS. Install it with `brew install jdtls`.")
+	end
+	jdtls_path = brew_prefix .. "/libexec"
+else
+	error('Invalid jdtls_source: expected "mason" or "brew"')
+end
+
 require("mason-lspconfig").setup({
-	ensure_installed = { "kotlin_lsp" },
+	ensure_installed = ensure_installed,
 	automatic_enable = {
-		exclude = { "kotlin_lsp" },
+		exclude = { "kotlin_lsp", "jdtls" },
 	},
 })
 
@@ -31,7 +50,8 @@ require("java").setup({
 	},
 	jdk = { auto_install = false },
 	jdtls = {
-		soversion = nil,
+		auto_install = false,
+		path = jdtls_path,
 	},
 	spring_boot_tools = { enable = false },
 	java_test = { enable = false },
@@ -39,8 +59,6 @@ require("java").setup({
 })
 
 require("kotlin").setup({
-	jre_path = os.getenv("JAVA_HOME"),
-
 	jvm_args = {
 		"-Xmx2g",
 	},
@@ -79,6 +97,10 @@ require("kotlin").setup({
 	},
 })
 
+vim.lsp.config("*", {
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
+})
+
 vim.keymap.set("n", "grh", function()
 	local bufnr = vim.api.nvim_get_current_buf()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }), { bufnr = bufnr })
@@ -86,3 +108,4 @@ end, { desc = "Toggle inlay hints" })
 
 vim.lsp.enable("jdtls")
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")

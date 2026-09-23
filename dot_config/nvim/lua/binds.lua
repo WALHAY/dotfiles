@@ -5,8 +5,8 @@ function M.delete_all_buffers()
 	local bufs = vim.api.nvim_list_bufs()
 
 	for _, buf in ipairs(bufs) do
-		if buf ~= current and not vim.api.nvim_buf_is_loaded(buf) then
-			pcall(vim.api.nvim_buf_delete, buf, {})
+		if buf ~= current and vim.api.nvim_buf_is_valid(buf) then
+			pcall(vim.api.nvim_buf_delete, buf, { force = false })
 		end
 	end
 end

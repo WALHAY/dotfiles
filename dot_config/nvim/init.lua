@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 require("options").setup()
 require("binds").setup()
 
@@ -27,4 +29,3 @@ local function pack_clean()
 end
 
 vim.keymap.set("n", "<leader>pc", pack_clean)
-

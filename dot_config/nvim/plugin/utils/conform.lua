@@ -6,6 +6,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		sql = { "sqruff" },
+		java = { "palantir-java-format" },
+		kotlin = { "ktlint" },
+		c = { "clang-format" },
+		cpp = { "clang-format" },
 	},
 })
 

@@ -1,8 +1,6 @@
 local M = {}
 
 M.setup = function()
-	vim.g.mapleader = " "
-
 	vim.opt.clipboard = "unnamedplus"
 
 	vim.opt.numberwidth = 3

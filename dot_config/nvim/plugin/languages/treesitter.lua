@@ -2,8 +2,7 @@ vim.pack.add({
 	"https://github.com/nvim-treesitter/nvim-treesitter",
 })
 
-require("nvim-treesitter").setup({
-	ensure_installed = {
+local parsers = {
 		"lua",
 		"vim",
 		"vimdoc",
@@ -12,23 +11,27 @@ require("nvim-treesitter").setup({
 		"yaml",
 		"kotlin",
 		"java",
-	},
+		"c",
+		"cpp",
+}
 
-	highlight = {
-		enable = true,
-	},
+require("nvim-treesitter").setup({})
+require("nvim-treesitter").install(parsers)
 
-	indent = {
-		enable = true,
-	},
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(args)
+		local language = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+		if language then
+			pcall(vim.treesitter.start, args.buf, language)
+		end
+	end,
+})
 
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "<C-space>",
-			node_incremental = "<C-space>",
-			scope_incremental = false,
-			node_decremental = "<bs>",
-		},
-	},
+vim.api.nvim_create_autocmd("PackChanged", {
+	pattern = "nvim-treesitter",
+	callback = function()
+		vim.schedule(function()
+			require("nvim-treesitter").install(parsers)
+		end)
+	end,
 })
