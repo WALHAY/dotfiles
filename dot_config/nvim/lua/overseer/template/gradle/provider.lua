@@ -1,45 +1,46 @@
-local function create_gradle_task(name)
-	return {
-		name = "Gradle: " .. name,
-		desc = "Gradle task: " .. name,
-		builder = function()
-			return {
-				cmd = { "./gradlew", name },
-				cwd = vim.fn.getcwd(),
-				components = {
-					{ "default", output = "wrap" },
-					"on_result_diagnostics",
-					{ "on_result_diagnostics_quickfix", { open = true } },
-				},
-				metadata = { priority = 100 },
-			}
-		end,
-		tags = { "build", "gradle" },
-	}
-end
+local tasks = {
+	{ "runClient" },
+	{ "bootRun" },
+	{ "spotlessApply" },
+	{ "ktfmtMain" },
+	{ "build" },
+	{ "test" },
+	{ "clean" },
+	{ "build", "--continuous" },
+}
 
 return {
 	name = "Gradle Tasks",
-	generator = function(search, cb)
+	generator = function(search, callback)
 		local gradlew = vim.fs.find("gradlew", { upward = true, type = "file", path = search.dir })[1]
 		if not gradlew then
-			cb({})
+			callback({})
 			return
 		end
-
-		local tasks = { "runClient", "bootRun", "spotlessApply", "ktfmtMain", "build", "test", "clean", "build --continuous" }
-
+		local root = vim.fs.dirname(gradlew)
 		local templates = {}
-		for _, name in ipairs(tasks) do
-			table.insert(templates, create_gradle_task(name))
+		for _, arguments in ipairs(tasks) do
+			local args = vim.deepcopy(arguments)
+			local name = table.concat(args, " ")
+			templates[#templates + 1] = {
+				name = "Gradle: " .. name,
+				desc = "Gradle task: " .. name,
+				tags = { "build", "gradle" },
+				builder = function()
+					return {
+						cmd = gradlew,
+						args = vim.deepcopy(args),
+						cwd = root,
+						components = {
+							"default",
+							"on_result_diagnostics",
+							{ "on_result_diagnostics_quickfix", open = true },
+						},
+						metadata = { priority = 100 },
+					}
+				end,
+			}
 		end
-
-		cb(templates)
+		callback(templates)
 	end,
-	condition = {
-		callback = function(search)
-			local gradlew = vim.fs.find("gradlew", { upward = true, type = "file", path = search.dir })[1]
-			return gradlew ~= nil, "No gradlew found"
-		end,
-	},
 }
